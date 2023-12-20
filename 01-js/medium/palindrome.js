@@ -4,6 +4,17 @@
 */
 
 function isPalindrome(str) {
+  let cleanedStr = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+  if (cleanedStr.length <= 1) return true;
+  
+  let i = 0, l = cleanedStr.length - 1;
+  while (i < l) {
+    if (cleanedStr[i] !== cleanedStr[l]) {
+      return false;
+    }
+    i++;
+    l--;
+  }
   return true;
 }
 
